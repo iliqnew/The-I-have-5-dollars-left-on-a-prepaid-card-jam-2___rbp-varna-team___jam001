@@ -1,0 +1,30 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ActivateGameMenu : MonoBehaviour
+{
+	public GameObject MenuCanvas;
+	public GameObject Manu;
+	public GameObject OptionMenu;
+	
+    void Update()
+    {
+        if (Input.GetKeyDown("escape")){
+			if (MenuCanvas.activeSelf){
+				if (OptionMenu.activeSelf){
+					OptionMenu.SetActive(false);
+					Manu.SetActive(true);
+				}
+				else{
+					Time.timeScale = 1;
+					MenuCanvas.SetActive(false);
+				}
+			}
+			else{
+				Time.timeScale = 0;
+				MenuCanvas.SetActive(true);
+			}
+		}
+    }
+}
