@@ -12,14 +12,10 @@ public class ActivateGameMenu : MonoBehaviour
     {
         if (Input.GetKeyDown("escape")){
 			if (MenuCanvas.activeSelf){
-				if (OptionMenu.activeSelf){
-					OptionMenu.SetActive(false);
-					Manu.SetActive(true);
-				}
-				else{
-					Time.timeScale = 1;
-					MenuCanvas.SetActive(false);
-				}
+				
+				Time.timeScale = 1;
+				MenuCanvas.SetActive(false);
+				
 			}
 			else{
 				Time.timeScale = 0;
